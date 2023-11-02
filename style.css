@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f3f6;
+  width: 100%;
+}
+
+.login-main {
+  max-width: 482px;
+  width: 100%;
+  padding: 30px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+  padding-bottom: 45px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  align-items: center;
+  padding-bottom: 27px;
+  font-family: "Poppins", sans-serif;
+}
+
+.mail {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: #555555;
+  width: 100%;
+}
+
+.mail > input {
+  padding: 18px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: #f1f3f6;
+}
+
+.password {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: #555555;
+  width: 100%;
+}
+
+.password > input {
+  padding: 18px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: #f1f3f6;
+}
+
+::placeholder {
+  font-size: 15px;
+}
+
+.password > a {
+  text-align: right;
+  font-size: 14px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.buttons > button {
+  width: 100%;
+  padding: 15px 20px;
+  cursor: pointer;
+}
+.btn-registration > button {
+  color: white;
+  background-color: #d86304;
+}
+.buttons > button:first-child {
+  background-color: #fd7401;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+}
+
+.buttons > button:first-child:hover {
+  background-color: #ea6b03;
+}
+.buttons > button:first-child:active {
+  background-color: #d86304;
+}
+
+.buttons > button:last-child {
+  border: solid 1px #fd7401;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fd7401;
+  background-color: #ffffff;
+}
+
+.buttons > button:last-child:hover {
+  background-color: #eae7e7;
+}
+.buttons > button:last-child:active {
+  background-color: #cfcece;
+}

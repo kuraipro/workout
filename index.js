@@ -1,29 +1,24 @@
-// TODO посмотреть как в JS работать с датами
-// TODO создать массив с тренировками и наполнить его тренировками. Каждая запись состоит из полей: дата, текущий вес, ссылка на фотографию.
-// TODO создать функцию, которая будет принимать вес и ссылку на изображение и добавлять запись к списку тренировок.
-// TODO создать функцию, которая будет удалять запись из списка тренировок.
-// TODO создать функцию, которая позволяет изменить вес у указанной тренировки. Необходимо доработать модель данных.
-// TODO создать функцию, которая позволит изменить ссылку на изображение у указанной записи.
-// TODO создать функцию, которая позволит изменить дату тренировка.
-// TODO создать функцию, которая позвонли удалить все записи.
-
 // объявил переменную и записал в нее массив
 // в котором мы будем хранить результаты тренировок
 const workoutResults = [];
 //создал функцию для добавления новых результатов тренировок
 function addResult(weight, link) {
   //шаблон тренировки
+
   const result = {
     //создаем генератор id  для каждой тренировки
     id: +Math.random().toString().slice(2),
     weight: weight,
     // стандартная функция для получения текущей даты
-    date: new Date().toLocaleDateString(),
+    date: new Date(),
     imageLink: link,
   };
   workoutResults.push(result);
 }
 addResult(90, "/wefwef");
+addResult(90, "/wefwef");
+addResult(90, "/wefwef");
+
 // создал функцию для удаления тренировок из массива
 function removeResult(id) {
   //используем этот метод, чтобы найти
@@ -73,4 +68,14 @@ function removeAllResults() {
   workoutResults.length = 0;
 }
 
-console.log(workoutResults);
+function selectRange(start, finish) {
+  const firstDate = new Date(start);
+  const secondDate = new Date(finish);
+  return workoutResults.filter((traning) => {
+    const traningDate = new Date(traning.date);
+    if (traningDate >= firstDate && traningDate <= secondDate) {
+      return traning;
+    }
+  });
+}
+console.log(selectRange("10.10.2023", "11.01.2023"));
