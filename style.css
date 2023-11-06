@@ -19,6 +19,12 @@
   width: 100%;
 }
 
+@media screen and (max-width: 768px) {
+  .login-image {
+    display: none;
+  }
+}
+
 .login-main {
   max-width: 482px;
   width: 100%;
@@ -89,19 +95,19 @@ h1 {
   flex-direction: column;
   gap: 50px;
   align-items: center;
-  font-family: "Poppins", sans-serif;
 }
 
-.buttons > button {
+.btn {
   width: 100%;
   padding: 15px 20px;
   cursor: pointer;
+  font-family: "Poppins", sans-serif;
 }
 .btn-registration > button {
   color: white;
   background-color: #d86304;
 }
-.buttons > button:first-child {
+.btn-orange {
   background-color: #fd7401;
   border: none;
   border-radius: 10px;
@@ -110,25 +116,27 @@ h1 {
   color: white;
 }
 
-.buttons > button:first-child:hover {
+.btn-orange:hover {
   background-color: #ea6b03;
 }
-.buttons > button:first-child:active {
+.btn-orange:active {
   background-color: #d86304;
 }
 
-.buttons > button:last-child {
+.btn-white {
   border: solid 1px #fd7401;
   border-radius: 10px;
   font-size: 16px;
   font-weight: 600;
   color: #fd7401;
   background-color: #ffffff;
+  text-decoration: none;
+  text-align: center;
 }
 
-.buttons > button:last-child:hover {
+.btn-white:hover {
   background-color: #eae7e7;
 }
-.buttons > button:last-child:active {
+.btn-white:active {
   background-color: #cfcece;
 }
