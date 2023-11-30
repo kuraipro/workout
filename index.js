@@ -78,4 +78,3 @@ function selectRange(start, finish) {
     }
   });
 }
-console.log(selectRange("10.10.2023", "11.01.2023"));

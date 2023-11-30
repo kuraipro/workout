@@ -33,3 +33,34 @@ function deleteProfile(id) {
   users.splice(indexForDelete, 1);
   localStorage.setItem("users", JSON.stringify(users));
 }
+
+const loginInput = document.querySelector("#email");
+const passwordInput = document.querySelector("#password");
+
+async function register(email, password) {
+  const userData = {
+    email,
+    password,
+  };
+
+  try {
+    let response = await fetch(
+      "https://auth-vjhl.onrender.com/api/auth/register",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      }
+    );
+
+    const result = await response.json();
+    if (response.ok) {
+      localStorage.setItem("token", result.token);
+      document.location.href = "./profile.html";
+    } else alert(result.errorMessage);
+  } catch (e) {
+    return;
+  }
+}

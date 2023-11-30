@@ -15,13 +15,7 @@
         <div class="inputs">
           <div class="mail">
             <label for="email">Email address</label> <br />
-            <input
-              placeholder="alex@email.com"
-              id="email"
-              type="email"
-              name=""
-              id=""
-            />
+            <input placeholder="alex@email.com" id="email" type="email" />
           </div>
           <div class="password">
             <label for="password">Password</label><br />
@@ -29,14 +23,17 @@
               placeholder="Enter your password"
               id="password"
               type="password"
-              name=""
-              id=""
             /><br />
             <a href="./reset-password.html">Forgot password?</a>
           </div>
         </div>
         <div class="buttons">
-          <button class="btn btn-orange">Login now</button>
+          <button
+            onclick="login(loginInput.value, passwordInput.value)"
+            class="btn btn-orange"
+          >
+            Login now
+          </button>
           <a class="btn btn-white" href="./register.html"> Signup now </a>
         </div>
       </div>
@@ -45,4 +42,5 @@
       </div>
     </div>
   </body>
+  <script src="./login.js"></script>
 </html>
