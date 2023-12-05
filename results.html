@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <!-- <input type="file" name="" id="" /> -->
+      <input type="number" />
+      <button onclick="addResult(inputWeight.value)">Add</button>
+      <!-- <button onclick="getResult()">get result</button> -->
+      <button onclick="updateWeight(inputWeight.value)">Update</button>
+      <button onclick="deleteTraining()">delete</button>
+    </div>
+    <div class="cards"></div>
+  </body>
+  <script src="./js/result.js"></script>
+</html>
+<!-- "https://auth-vjhl.onrender.com/api/result/add" post body:{weight:90}-->
+<!-- "https://auth-vjhl.onrender.com/api/result" get -->
+<!-- "https://auth-vjhl.onrender.com/api/result/update/:id" put body:{weight:100} -->
+<!-- "https://auth-vjhl.onrender.com/api/result/delete/:id" delete -->
