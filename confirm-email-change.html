@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const url = new URL(window.location.href);
+      const newUrl = url.searchParams.get("token");
+      const token = localStorage.getItem("token");
+      async function confirmEmail() {
+        try {
+          let response = await fetch(
+            `https://auth-vjhl.onrender.com/api/profile/confirm-email-change?token=${newUrl}`,
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: token,
+              },
+            }
+          );
+
+          const result = await response.json();
+          console.log(result);
+          if (response.ok) {
+            document.location.href = "./profile.html";
+          }
+        } catch (e) {
+          console.error(e);
+        }
+      }
+      confirmEmail();
+    </script>
+  </head>
+  <body>
+    <h1>Почта изменена</h1>
+  </body>
+</html>

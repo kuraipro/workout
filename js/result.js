@@ -27,7 +27,6 @@ async function addResult(weight) {
     );
     const result = await response.json();
     createCard(result);
-    console.log(result);
   } catch (error) {
     console.error(e);
   }
@@ -39,7 +38,7 @@ const createCard = (element) => {
       <h1>Пользователь: ${element.userId}</h1>
       <p>Тренировка: ${element._id}</p>
       <p>Дата: ${element.data} </p>
-      <p>Вес: ${element.weight} </p>
+      <p class="weight">Вес: ${element.weight} </p>
       <button onclick="deleteTraining('${element._id}')">Delete</button>
       <button onclick="updateWeight('${element._id}')">Update</button>
       </div>
@@ -72,13 +71,14 @@ async function getResult() {
   }
 }
 
-async function updateWeight(weight) {
+async function updateWeight(id) {
+  const newWeight = prompt("Введите новый вес");
   const training = JSON.stringify({
-    weight: weight,
+    weight: newWeight,
   });
   try {
     const response = await fetch(
-      `https://auth-vjhl.onrender.com/api/result/update/6568a9d4f9c65cf75f91d40b`,
+      `https://auth-vjhl.onrender.com/api/result/update/${id}`,
       {
         method: "PUT",
         headers: {
@@ -88,8 +88,8 @@ async function updateWeight(weight) {
         body: training,
       }
     );
-    const result = await response.json();
-    console.log(result);
+    await response.json();
+    update(id, newWeight);
   } catch (error) {
     console.error(error);
   }
@@ -122,3 +122,11 @@ const deleteCard = (id) => {
   const element = document.querySelector(`[data-id="${id}"]`);
   element.innerHTML = null;
 };
+
+function update(id, weight) {
+  const index = trainings.findIndex((item) => item._id === id);
+  trainings[index].weight = weight;
+  const training = document.querySelector(`[data-id="${id}"]`);
+  const trainingWeight = training.querySelector(".weight");
+  trainingWeight.innerText = `Вес: ${weight}`;
+}
